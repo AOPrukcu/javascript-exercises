@@ -1,12 +1,22 @@
-const removeFromArray = function (array, removeWord) {
-     
-  return array.filter(element=>element !== removeWord);
-    
-    
- 
+const removeFromArray = function (array, ...arg) {
+  return array.filter(
+    (arrayElements) => !checkArrayElement(arrayElements, ...arg)
+  );
 };
 
-let array = ["apple","apple","mapple","watermelon","orange","berry","strawberry"];
-console.log(removeFromArray(array,"apple"))
+function checkArrayElement(arrayElements, ...arg) {
+  return arg.some((element) => arrayElements === element);
+}
+
+let array = [
+  "apple",
+  "apple",
+  "mapple",
+  "watermelon",
+  "orange",
+  "berry",
+  "strawberry",
+];
+console.log(removeFromArray(array, "apple"));
 // Do not edit below this line
 module.exports = removeFromArray;
