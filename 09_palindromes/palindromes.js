@@ -1,6 +1,6 @@
 const palindromes = function (word) {
     let arr = word.split("")
-    let result = arr.filter((element) => (element != "!")&&(element != ",") && (element!=" ") && (element != ".")   )
+    let result = arr.filter((character) => alphanumerical.includes(character) )
     let temp = result.slice()
     let reverse = result.reverse()
     palindrome = reverse.join('').toLowerCase() === temp.join('').toLowerCase()
